@@ -4,6 +4,18 @@
 services:
   # This service will extend code from dcape
   app:
+    command: start
     environment:
-      # Some var to keep YML struct
-      - DEBUG=yes
+      - KEYCLOAK_ADMIN=${USER_NAME}
+      - KEYCLOAK_ADMIN_PASSWORD=${USER_PASS}
+      - KC_HOSTNAME=https://${APP_SITE}
+      - KC_HOSTNAME_DEBUG=true # see /realms/master/hostname-debug
+      - KC_DB=postgres
+      - KC_DB_USERNAME=${PGUSER}
+      - KC_DB_PASSWORD=${PGPASSWORD}
+      - KC_DB_URL_HOST=${PGHOST}
+      - KC_DB_URL_DATABASE=${PGDATABASE}
+      - KC_HTTP_ENABLED=true
+      - KC_PROXY_HEADERS=forwarded
+      - KEYCLOAK_LOGLEVEL=INFO
+

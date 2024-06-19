@@ -7,19 +7,20 @@ CFG                ?= .env
 CFG_BAK            ?= $(CFG).bak
 
 #- App name
-APP_NAME           ?= service-template
+APP_NAME           ?= keycloak
 
 #- Docker image name
-IMAGE              ?= ghcr.io/lekovr/service-template
+IMAGE              ?= quay.io/keycloak/keycloak
 
 #- Docker image tag
-IMAGE_VER          ?= 0.1.0
+IMAGE_VER          ?= 25.0.0
+
 
 # If you need database, uncomment this var
-#USE_DB              = yes
+USE_DB              = yes
 
 # If you need user name and password, uncomment this var
-#ADD_USER            = yes
+ADD_USER            = yes
 
 # ------------------------------------------------------------------------------
 
